@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="normal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="stylesheet" href="../src/input.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./script.js" defer></script>
+
+    <title>Frontend Mentor | Calculator app</title>
+  </head>
+  <body class="min-h-screen font-League Spartan font-bold">
+    <main
+      class="min-h-screen px-8 w-full flex flex-col items-center gap-10 md:gap-5 md:justify-center"
+    >
+      <div
+        class="flex justify-between mt-14 md:mt-0 items-baseline w-full sm:max-w-sm"
+      >
+        <div>
+          <h1 class="text-4xl">calc</h1>
+        </div>
+        <div class="flex gap-6">
+          <p class="">THEME</p>
+          <div
+            class="theme-switch relative flex justify-center items-center rounded-full px-1"
+          >
+            <label class="w-5 h-5 flex justify-center items-center">
+              <span class="toggle-num absolute -top-7">1</span>
+              <input
+                type="radio"
+                name="toggle"
+                class="hidden switch"
+                id="first"
+                checked
+              />
+              <span class="toggle w-4 h-4 rounded-full opacity-0"></span>
+            </label>
+            <label class="w-5 h-5 flex justify-center items-center">
+              <span class="toggle-num absolute -top-7">2</span>
+              <input
+                type="radio"
+                name="toggle"
+                class="hidden switch"
+                id="second"
+              />
+              <span class="toggle light w-4 h-4 rounded-full opacity-0"></span>
+            </label>
+            <label class="w-5 h-5 flex justify-center items-center">
+              <span class="toggle-num absolute -top-7">3</span>
+              <input
+                type="radio"
+                name="toggle"
+                class="hidden switch"
+                id="third"
+              />
+              <span class="toggle dark w-4 h-4 rounded-full opacity-0"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <input
+        type="text"
+        value=""
+        class="output w-full text-[32px] scrollbar px-4 text-5xl overflow-scroll py-4 text-right rounded-lg sm:max-w-sm outline-none"
+        readonly
+      />
+
+      <div
+        class="calculator rounded-lg w-full p-5 grid grid-cols-4 gap-4 sm:max-w-sm"
+      >
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(7)">
+          7
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(8)">
+          8
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(9)">
+          9
+        </button>
+        <button
+          class="delete py-2 text-xl rounded-md"
+          onclick="handleDelete('del')"
+        >
+          DEL
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(4)">
+          4
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(5)">
+          5
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(6)">
+          6
+        </button>
+        <button
+          class="color-num special py-2 text-3xl rounded-md"
+          onclick="display('+')"
+        >
+          +
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(1)">
+          1
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(2)">
+          2
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(3)">
+          3
+        </button>
+        <button
+          class="color-num special py-2 text-3xl rounded-md"
+          onclick="display('-')"
+        >
+          -
+        </button>
+        <button
+          class="color-num special py-2 text-3xl rounded-md"
+          onclick="display('.')"
+        >
+          .
+        </button>
+        <button class="color-num py-2 text-3xl rounded-md" onclick="display(0)">
+          0
+        </button>
+        <button
+          class="color-num special py-2 text-3xl rounded-md"
+          onclick="display('/')"
+        >
+          /
+        </button>
+        <button
+          class="color-num special py-2 text-3xl rounded-md"
+          onclick="display('*')"
+        >
+          x
+        </button>
+        <button
+          class="reset py-2 col-span-2 text-2xl rounded-md"
+          onclick="handleReset('reset')"
+        >
+          RESET
+        </button>
+        <button
+          class="equal py-2 col-span-2 text-2xl rounded-md"
+          onclick="handleSolve('=')"
+        >
+          =
+        </button>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* theme 1 */
+[data-theme="normal"] {
+  /* background */
+  --main-bg: hsl(222, 26%, 31%);
+  --toggle-bg-keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+
+  /* Keys */
+
+  --delete-key-bg: hsl(225, 21%, 49%);
+  --delete-key-shadow: hsl(224, 28%, 35%);
+
+  --equal-tggle-key-bg: hsl(6, 63%, 50%);
+  --equal-key-shadow: hsl(6, 70%, 34%);
+
+  --numbers-key-bg: hsl(30, 25%, 89%);
+  --numbers-key-shadow: hsl(28, 16%, 65%);
+
+  /* Text */
+
+  --numbers-txt-clr: hsl(221, 14%, 31%);
+  --special-txt-clr: hsl(0, 0%, 100%);
+}
+
+/* theme 2 */
+[data-theme="light"] {
+  /* background */
+  --main-bg: hsl(0, 0%, 90%);
+  --toggle-bg-keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+
+  /* Keys */
+
+  --delete-key-bg: hsl(185, 42%, 37%);
+  --delete-key-shadow: hsl(185, 58%, 25%);
+
+  --equal-tggle-key-bg: hsl(25, 98%, 40%);
+  --equal-key-shadow: hsl(25, 99%, 27%);
+
+  --numbers-key-bg: hsl(45, 7%, 89%);
+  --numbers-key-shadow: hsl(35, 11%, 61%);
+
+  /* Text */
+
+  --numbers-txt-clr: hsl(60, 10%, 19%);
+  --special-txt-clr: hsl(60, 10%, 19%);
+}
+
+/* theme 3 */
+[data-theme="dark"] {
+  /* background */
+  --main-bg: hsl(268, 75%, 9%);
+  --toggle-bg-keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+
+  /* Keys */
+
+  --delete-key-bg: hsl(281, 89%, 26%);
+  --delete-key-shadow: hsl(285, 91%, 52%);
+
+  --equal-tggle-key-bg: hsl(176, 100%, 44%);
+  --equal-key-shadow: hsl(177, 92%, 70%);
+
+  --numbers-key-bg: hsl(268, 47%, 21%);
+  --numbers-key-shadow: hsl(290, 70%, 36%);
+
+  /* Text */
+
+  --numbers-txt-clr: hsl(0, 0%, 100%);
+  --special-txt-clr: hsl(52, 100%, 62%);
+}
+
+main {
+  background-color: var(--main-bg);
+}
+
+.calculator,
+.theme-switch {
+  background-color: var(--toggle-bg-keypad-bg);
+}
+.output {
+  background-color: var(--screen-bg);
+}
+
+.toggle {
+  background-color: var(--equal-tggle-key-bg);
+}
+
+h1,
+p,
+.toggle-num,
+.output {
+  color: var(--special-txt-clr);
+}
+.delete,
+.reset,
+.equal {
+  color: var(--special-txt-clr);
+}
+
+.delete,
+.reset {
+  background-color: var(--delete-key-bg);
+  box-shadow: 0px 4px var(--delete-key-shadow);
+}
+
+.equal {
+  background-color: var(--equal-tggle-key-bg);
+  box-shadow: 0px 4px var(--equal-key-shadow);
+}
+
+.color-num {
+  color: var(--numbers-txt-clr);
+  background-color: var(--numbers-key-bg);
+  box-shadow: 0px 4px var(--numbers-key-shadow);
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.theme-switch input:checked + .toggle {
+  opacity: 1;
+  display: inline-block;
+}
+
+.toggle,
+label {
+  cursor: pointer;
+  transition: 0.42s;
+}

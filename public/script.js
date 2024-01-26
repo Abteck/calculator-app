@@ -45,29 +45,19 @@ window.onload = function checkTheme() {
 const output = document.querySelector(".output");
 // display value
 function display(val) {
-  const result = output.value;
-  if (
-    result.includes("+*") ||
-    result.includes("+/") ||
-    result.includes("+.") ||
-    result.includes("++") ||
-    result.includes("+-") ||
-    result.includes("--") ||
-    result.includes("-.") ||
-    result.includes("..") ||
-    result.includes("**") ||
-    result.includes("//")
-  ) {
-    output.value = output.value.slice(0, -1);
-  } else {
-    output.value += val;
-  }
+  output.value += val;
 }
 
-function handleSolve(val) {
-  let x = output.value;
-  let y = eval(x);
-  output.value = y;
+function handleSolve() {
+  const result = output.value;
+  try {
+    const solve = eval(result);
+    output.value = solve;
+  } catch (error) {
+    {
+      output.value = "!ERROR";
+    }
+  }
 }
 
 function handleReset(val) {
